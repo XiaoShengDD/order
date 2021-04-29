@@ -7,9 +7,9 @@
         <img src="@/assets/order/out.png" alt />
       </div>
 
-      <div>
+      <div class="center">
         <span>淘宝天猫</span>
-        <img src="@/assets/order/down.png" alt />
+        <!-- <img src="@/assets/order/down.png" alt /> -->
       </div>
 
       <div class="right">
@@ -21,8 +21,8 @@
 
     <!-- title start -->
     <div class="title">
-      <span>我的订单</span>
-      <img src="@/assets/order/down.png" alt />
+      <span class="active">我的订单</span>
+      <span>团队订单</span>
     </div>
     <!-- title end -->
 
@@ -228,8 +228,22 @@ a {
   height: 40px;
   line-height: 40px;
   background: #ff2e6b;
-
   padding: 0 10px;
+  position: relative;
+  .center {
+    text-align: center;
+    width: 100px;
+    &::before {
+      content: url('./assets/order/down.png');
+      position: absolute;
+      left: 50%;
+      margin-left: -33px;
+    }
+    span {
+      margin-right: 0;
+    }
+  }
+
   span {
     font-size: 15px;
     font-weight: 500;
@@ -259,18 +273,20 @@ a {
     font-size: 15px;
     font-weight: 500;
     color: #fefefe;
-  }
-  img {
-    transform: rotate(180deg);
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -moz-transform: rotate(180deg); /* Firefox */
-    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
-    -o-transform: rotate(180deg); /* Opera */
-    position: absolute;
-    left: 50%;
-    margin-left: 3px;
-    bottom: 8px;
-    height: 9px;
+    padding: 0 20px;
+    position: relative;
+    &.active::after {
+      content: url('./assets/order/down.png');
+      transform: rotate(180deg);
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -moz-transform: rotate(180deg); /* Firefox */
+      -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+      -o-transform: rotate(180deg); /* Opera */
+      position: absolute;
+      bottom: -21px;
+      left: 50%;
+      margin-left: -3px;
+    }
   }
 }
 // mian
